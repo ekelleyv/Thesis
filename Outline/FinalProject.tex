@@ -1,0 +1,78 @@
+\documentclass[pageno]{jpaper}
+
+%replace XXX with the submission number you are given from the ISCA submission site.
+\newcommand{\IWreport}{2012}
+
+\usepackage[normalem]{ulem}
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+
+\begin{document}
+
+\title{3D Model Generation of Large Objects Using Autonomous Quadcopters}
+\author{Edward Kelley \\
+        Advisor: Szymon Rusinkiewicz
+}
+
+\date{}
+\maketitle
+
+\thispagestyle{empty}
+
+
+\begin{enumerate}
+\item Introduction
+	\begin{enumerate}
+		\item Motivation
+		\item Description of Problem
+		\item Current Methods for Acquiring Models
+		\item Proposed Solution
+	\end{enumerate}
+\item Related Work
+	\begin{enumerate}
+		\item Irschara et al.
+		\item Engel et al.
+	\end{enumerate}
+\item System Design
+	\begin{enumerate}
+		\item Hardware
+		\item Architecture
+			\begin{enumerate}
+				\item Robot Operating System
+				\item ARdrone Autonomy Package
+				\item Localization
+				\item Controller
+				\item Agisoft PhotoScan
+			\end{enumerate}
+	\end{enumerate}
+\item Localization
+	\begin{enumerate}
+		\item Problem Description
+		\item Potential Solutions
+		\item Particle Filter
+		\item Results
+			\begin{enumerate}
+				\item Using Visual Odometry
+				\item Using Accelerometer
+				\item Using Gyroscope
+				\item Using Magnetometer
+				\item Using Visual Tags
+				\item Combining Different Methods
+			\end{enumerate}
+	\end{enumerate}
+\item Controller
+	\begin{enumerate}
+		\item Problem Description
+		\item Design
+		\item Graphs of Quadcopter Completing Different Paths in Varying Conditions
+	\end{enumerate}
+\item Model Generation
+	\begin{enumerate}
+		\item Examples of models created by PhotoScan
+		\item Accuracy of model generation
+	\end{enumerate}
+\item Conclusion
+\end{enumerate}
+
+\end{document}
+
