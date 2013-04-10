@@ -77,6 +77,29 @@
 %   see: http://en.wikibooks.org/wiki/LaTeX/Tables
 \usepackage{booktabs}
 
+\usepackage{listings}
+
+\singlespacing
+\usepackage{color}
+\usepackage{listings}
+\lstset{ %
+language=Python,                % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=8pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+tabsize=2,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
 %set parameters for longtable:
 % default caption width is 4in for longtable, but wider for normal tables
 \setlength{\LTcapwidth}{\textwidth}
@@ -230,6 +253,10 @@
 % \include lets us split up the document (and each include starts a new page):
 \include{ch-intro/chapter-intro}
 \include{ch-pastwork/chapter-pastwork}
+\include{ch-system/chapter-system}
+\include{ch-localization/chapter-localization}
+\include{ch-controller/chapter-controller}
+\include{ch-results/chapter-results}
 \include{ch-conclusion/chapter-conclusion}
 \appendix % all chapters following will be labeled as appendices
 \include{ch-appendicies/implementation}
@@ -248,6 +275,7 @@
 \fi
 \addcontentsline{toc}{chapter}{Bibliography}
 
+\nocite{*}
 % include your .bib file
 \bibliography{thesis}
 
