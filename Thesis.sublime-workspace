@@ -1,0 +1,1233 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"proj",
+				"proj_height"
+			],
+			[
+				"Tag",
+				"TagLibrary"
+			],
+			[
+				"proje",
+				"projector_corners"
+			],
+			[
+				"for",
+				"for	for in"
+			],
+			[
+				"disp",
+				"disp_buffer"
+			],
+			[
+				"weight",
+				"weight"
+			],
+			[
+				"y",
+				"y"
+			],
+			[
+				"partic",
+				"particle"
+			],
+			[
+				"particl",
+				"particle_list"
+			],
+			[
+				"norm",
+				"norm_delta_theta"
+			],
+			[
+				"print",
+				"print_particles"
+			],
+			[
+				"prop",
+				"propogate"
+			],
+			[
+				"par",
+				"particlefilter"
+			],
+			[
+				"weig",
+				"weight_dict"
+			],
+			[
+				"pattern",
+				"pattern_filepath"
+			],
+			[
+				"load",
+				"loadPatternFilenames"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"init",
+				"init_on"
+			],
+			[
+				"el",
+				"ellipse	ellipse"
+			],
+			[
+				"draw",
+				"drawMarkers"
+			],
+			[
+				"current",
+				"current_person"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"angu",
+				"angular"
+			],
+			[
+				"remaining",
+				"remaining_people"
+			],
+			[
+				"curren",
+				"current_person_index"
+			],
+			[
+				"cur",
+				"current_male"
+			],
+			[
+				"person",
+				"current_person_index"
+			],
+			[
+				"rand",
+				"rand_person_index"
+			],
+			[
+				"curr",
+				"current_person_index"
+			],
+			[
+				"correct",
+				"correct_index"
+			],
+			[
+				"curre",
+				"current_person_index"
+			],
+			[
+				"correc",
+				"correct_index"
+			],
+			[
+				"random",
+				"random_index"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"btn",
+				"btn-group"
+			],
+			[
+				"color",
+				"color_width"
+			],
+			[
+				"schem",
+				"scheme_index"
+			],
+			[
+				"updat",
+				"updateTriangles"
+			],
+			[
+				"Array",
+				"ArrayList"
+			],
+			[
+				"sorte",
+				"sorted_by_second"
+			],
+			[
+				"down",
+				"downvote_tracker"
+			],
+			[
+				"num",
+				"num_users"
+			],
+			[
+				"s",
+				"stories"
+			],
+			[
+				"per",
+				"percent_left"
+			],
+			[
+				"story",
+				"story_type"
+			],
+			[
+				"user",
+				"user_type"
+			],
+			[
+				"round",
+				"round-1"
+			],
+			[
+				"ma",
+				"max_util_index"
+			],
+			[
+				"out",
+				"outbid_value"
+			],
+			[
+				"na",
+				"nagents-1"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"grape",
+				"grapevine_app"
+			],
+			[
+				"url",
+				"url"
+			],
+			[
+				"c",
+				"contrib"
+			],
+			[
+				"grap",
+				"grapevine_app"
+			],
+			[
+				"item",
+				"item_id"
+			],
+			[
+				"new",
+				"newest_json"
+			],
+			[
+				"it",
+				"item_id"
+			],
+			[
+				"ne",
+				"newest_json"
+			],
+			[
+				"forgive",
+				"forgive_thresh"
+			],
+			[
+				"count-",
+				"count-last_test"
+			],
+			[
+				"test",
+				"test_rate"
+			],
+			[
+				"notif",
+				"notifications-box"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"not",
+				"notification"
+			],
+			[
+				"noti",
+				"notification_object"
+			],
+			[
+				"get",
+				"get_notifications"
+			],
+			[
+				"cl",
+				"clickedAway"
+			],
+			[
+				"paddi",
+				"padding-bottom"
+			],
+			[
+				"profile",
+				"profile-link"
+			],
+			[
+				"stat",
+				"status-text"
+			],
+			[
+				"confirm",
+				"confirm-input"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"max-",
+				"max-height"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: List Packages"
+			],
+			[
+				"upd",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"reme",
+				"Package Control: Remove Package"
+			],
+			[
+				"enum",
+				"Snippet: Enumerate"
+			],
+			[
+				"enu",
+				"Snippet: Enumerate"
+			],
+			[
+				"enumer",
+				"Snippet: Enumerate"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"snippet	",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"stin",
+				"Stino: Reference"
+			],
+			[
+				"stino",
+				"Stino: Getting Started"
+			],
+			[
+				"process",
+				"Set Syntax: Processing"
+			],
+			[
+				"on read",
+				"Snippet: document-ready"
+			],
+			[
+				"snippe onre",
+				"Snippet: document ready - jQuery"
+			],
+			[
+				"snip ",
+				"Snippet: $http"
+			],
+			[
+				"snipp htt",
+				"Snippet: $http"
+			],
+			[
+				"Snippet: main",
+				"Snippet: if __name__ == '__main__'"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"latex",
+				"LaTeXTools: Jump to PDF"
+			],
+			[
+				"view p",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"late",
+				"LaTeXTools: Jump to PDF"
+			],
+			[
+				"latext",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"",
+				"File: Save All"
+			],
+			[
+				"conver",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"git bra",
+				"Git: Change Branch"
+			],
+			[
+				"git branch",
+				"Git: Change Branch"
+			],
+			[
+				"git commit ",
+				"Git: Quick Commit"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"con",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"conv",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"convert ",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"package ",
+				"Package Control: List Packages"
+			],
+			[
+				"package	",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Git: Blame"
+			],
+			[
+				"gitk",
+				"Git: Gitk"
+			],
+			[
+				"git blame",
+				"Git: Blame"
+			],
+			[
+				"git statu",
+				"Git: Status"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git comm",
+				"Git: Quick Commit"
+			],
+			[
+				"git commit m",
+				"Set Syntax: Git Commit Message"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/thesis.pdf",
+		"/Users/ekelley/Google Drive/Projects/HCI/Processing/Project/Tag.pde",
+		"/Users/ekelley/Google Drive/Projects/HCI/Processing/Project/Initialize.pde",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FebPaper/FinalProject.tex",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/puthesis.cls",
+		"/Users/ekelley/Google Drive/Projects/Thesis/Outline/FinalProject.tex",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/ch-results",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/ch-localization/localization.tex",
+		"/Users/ekelley/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/ekelley/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/Users/ekelley/Google Drive/Projects/HCI/Processing/libraries/PFrame-master/examples/PFrameExample/PFrameExample.pde",
+		"/Users/ekelley/Google Drive/Projects/QuadcopterMapping/quadcopterCode/src/particlefilter.py",
+		"/Users/ekelley/Google Drive/Projects/QuadcopterMapping/quadcopterCode/src/walkerrandom.py",
+		"/Users/ekelley/Google Drive/Projects/QuadcopterMapping/quadcopterCode/src/particle.py",
+		"/Users/ekelley/Google Drive/Projects/Tower/flaskapp.py",
+		"/Users/ekelley/Google Drive/Projects/Tower/config.py",
+		"/Users/ekelley/Google Drive/Projects/HCI/Processing/Grid/Grid.pde",
+		"/Users/ekelley/Google Drive/Projects/HCI/Processing/Project/Grid.pde",
+		"/Users/ekelley/Google Drive/Projects/HCI/Processing/Project/ARObject.pde",
+		"/Users/ekelley/Google Drive/Projects/HCI/Processing/Project/Project_old.pde",
+		"/Users/ekelley/Google Drive/Projects/HCI/Project/Project.pde",
+		"/Users/ekelley/Google Drive/Projects/faceboard/hard.html",
+		"/Users/ekelley/Downloads/members.json",
+		"/Users/ekelley/Google Drive/Projects/faceboard/index.html",
+		"/Users/ekelley/Library/Application Support/Sublime Text 2/Packages/User/LaTeX.sublime-settings",
+		"/Users/ekelley/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/ekelley/Desktop/test/test.pde",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FebPaper/FinalProject_old.tex",
+		"/Users/ekelley/Google Drive/Projects/floored/trigrid.pde",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/.gitignore",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/post2.py",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/user2.py",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/user.py",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/sampling.py",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/reddit.py",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/identify_bias.py",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/main.py",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/report/bib.bib",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/report/report.tex",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/cluster.py",
+		"/Users/ekelley/Google Drive/Projects/CollusionRanking/simulation.py",
+		"/Users/ekelley/Google Drive/Classes/Fall_2012/COS_445/PA2/input.txt",
+		"/Users/ekelley/Google Drive/Classes/Fall_2012/COS_445/PA2/Ekelley.java",
+		"/Users/ekelley/Google Drive/Projects/badstartups/badstartupsapp/forms.py",
+		"/Users/ekelley/Google Drive/Projects/badstartups/badstartups/settings.py",
+		"/Users/ekelley/Google Drive/Projects/badstartups/templates/index.html",
+		"/Users/ekelley/Google Drive/Projects/badstartups/static/css/custom_bootstrap.css",
+		"/Users/ekelley/Google Drive/Projects/badstartups/static/css/main.css",
+		"/Users/ekelley/Google Drive/Projects/badstartups/badstartups/views.py",
+		"/Users/ekelley/Google Drive/Projects/badstartups/templates/footer.html",
+		"/Users/ekelley/Google Drive/Projects/badstartups/badstartupsapp/models.py",
+		"/Users/ekelley/Google Drive/Projects/badstartups/static/css/bootstrap.css",
+		"/Users/ekelley/Google Drive/Projects/badstartups/static/css/font.css",
+		"/Users/ekelley/Google Drive/Projects/badstartups/static/css/normalize.css",
+		"/Users/ekelley/Google Drive/Projects/grapevine/grapevine/localsettings.py",
+		"/Users/ekelley/Google Drive/Projects/grapevine/Procfile",
+		"/Users/ekelley/Google Drive/Projects/grapevine/templates/home.tpl",
+		"/Users/ekelley/Google Drive/Projects/grapevine/grapevine/urls.py",
+		"/Users/ekelley/Google Drive/Projects/grapevine.sublime-project",
+		"/Users/ekelley/Google Drive/Projects/grapevine/procfile",
+		"/Users/ekelley/Google Drive/Projects/hn_scraper/scraper.py",
+		"/Users/ekelley/Desktop/test.v",
+		"/Last lecture we discussed a concept called a finit",
+		"/Users/ekelley/Desktop/upright/templates/navbar.html",
+		"/Users/ekelley/Desktop/upright/templates/group_subgroup.html",
+		"/Users/ekelley/Desktop/upright/templates/profile.html",
+		"/Users/ekelley/Desktop/upright/Procfile",
+		"/Users/ekelley/Desktop/upright/uprightapp/views/__init__.py",
+		"/Users/ekelley/Desktop/upright/templates/settings/notifications.html",
+		"/Users/ekelley/Desktop/upright/uprightapp/views/group_views.py",
+		"/Users/ekelley/Desktop/upright/uprightapp/models.py",
+		"/Users/ekelley/Desktop/upright/templates/base.html",
+		"/Users/ekelley/Desktop/upright/templates/notifications_dropdown.html",
+		"/Users/ekelley/Desktop/upright/templates/group.html",
+		"/Users/ekelley/Desktop/upright/templates/status.html",
+		"/Users/ekelley/Desktop/upright/templates/group_person.html",
+		"/Users/ekelley/Desktop/upright/templates/multi_status.html",
+		"/Users/ekelley/Desktop/upright/upright/wsgi.py",
+		"/Users/ekelley/Desktop/upright/static/css/style.css",
+		"/Users/ekelley/Desktop/upright/upright/urls.py",
+		"/Users/ekelley/Desktop/upright/venv/lib/python2.7/site-packages/django/contrib/humanize/tests.py",
+		"/Users/ekelley/Desktop/upright/upright/settings.py",
+		"/Users/ekelley/Desktop/upright/templates/splash.html",
+		"/Users/ekelley/Desktop/upright/templates/registration/register_person.html",
+		"/Users/ekelley/Desktop/upright/static/terms.html",
+		"/Users/ekelley/Desktop/upright/accounts/models.py",
+		"/Users/ekelley/Desktop/upright/public/bootstrap/css/bootstrap.css",
+		"/Users/ekelley/Desktop/upright/venv/lib/python2.7/site-packages/distribute-0.6.27-py2.7.egg/setuptools/script template.py",
+		"/Users/ekelley/Desktop/upright/templates/groupbar.html",
+		"/Users/ekelley/Desktop/upright/uprightapp/croppable/fields.py",
+		"/Users/ekelley/Desktop/upright/templates/multi_status_box.html",
+		"/Users/ekelley/Desktop/upright/todo.txt",
+		"/Users/ekelley/Desktop/upright/uprightapp/croppable/forms.py",
+		"/Users/ekelley/Desktop/upright/accounts/urls.py",
+		"/Users/ekelley/Desktop/upright/templates/registration/login.html",
+		"/Users/ekelley/Desktop/upright/templates/form.html",
+		"/Users/ekelley/Desktop/upright/templates/registration/register_person_old.html",
+		"/Users/ekelley/Desktop/upright/accounts/views.py",
+		"/Users/ekelley/Desktop/upright/accounts/forms.py",
+		"/Users/ekelley/Desktop/upright/templates/registration/confirm.html",
+		"/Users/ekelley/Desktop/upright/templates/registration/register_confirm.html",
+		"/Users/ekelley/Desktop/upright/templates/comment.html",
+		"/Users/ekelley/Desktop/upright/uprightapp/views/multi_status_views.py",
+		"/Users/ekelley/Desktop/upright/templates/confirm.html",
+		"/Users/ekelley/Desktop/upright/templates/home.html",
+		"/Users/ekelley/Desktop/upright/uprightapp/views.py",
+		"/Users/ekelley/Desktop/upright/templates/registration/confirm_email.html",
+		"/Users/ekelley/Desktop/upright/templates/container.html",
+		"/Users/ekelley/Desktop/upright/superusermaker/models.py",
+		"/Users/ekelley/Desktop/upright/uprightapp/admin.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"marker_list",
+			"arraylist",
+			"ifpdf",
+			"cu",
+			"cubist",
+			"table",
+			"double",
+			"color",
+			"Tag",
+			"tag",
+			"Tag",
+			"disp_buffer",
+			"msg",
+			"))\n",
+			"seed",
+			"randomseed",
+			"test",
+			"Walkerrandom",
+			"mS",
+			"arobject",
+			"ARO",
+			"AROBjec",
+			"mS",
+			"ms",
+			"camPara",
+			"ars",
+			"arobject",
+			"ms",
+			"Arobject",
+			"ms",
+			"mS",
+			"\");\n",
+			"\n",
+			"responsiv",
+			"towards",
+			"IWreport",
+			"IW",
+			"print",
+			"x",
+			"expr",
+			"total",
+			"vote_decider",
+			"num_posts",
+			"content_id",
+			"				",
+			"print",
+			"extend_up",
+			"has_key	",
+			"has_key",
+			"users.append",
+			"jonah",
+			"librar",
+			"jason",
+			"dinner",
+			"jason",
+			"10",
+			"hrush",
+			"dec",
+			"dev",
+			"object",
+			"System",
+			"slots",
+			"PostForm",
+			"form",
+			"navbar",
+			"TEMPLATE_CONTEXT",
+			"admin",
+			"Authentica",
+			"\n",
+			"auth_profile_module",
+			"AUTHENTICATION",
+			"context",
+			"congrats ",
+			"group_indiv",
+			"textarea",
+			"input",
+			"text",
+			"text-area",
+			"support",
+			"dblcli",
+			"array",
+			"request.",
+			"User",
+			"status_submit",
+			"getJSON",
+			"ajax",
+			"popover",
+			"tooltip-bottom",
+			"tooltip",
+			"multi_status_box",
+			"humanize",
+			"California",
+			"Yammer",
+			"setup-form",
+			"right-side",
+			"breadcrumb",
+			"halflings",
+			"user has no",
+			"h1",
+			"large",
+			"min-width",
+			"nav",
+			"edit",
+			"croppable",
+			"logout",
+			"status",
+			"grid",
+			"comment-",
+			"confirmation_email",
+			"profile",
+			"register_start",
+			"	\n",
+			"right",
+			"croppable",
+			"croppabel",
+			"hr",
+			"status-comment",
+			"status-text"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"walkerrandom",
+			"tooltip",
+			"New Jersey",
+			"Upright"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 144.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"tag",
+				"Project/Tag.pde"
+			],
+			[
+				"gri",
+				"Project/Grid.pde"
+			],
+			[
+				"init",
+				"Project/Initialize.pde"
+			],
+			[
+				"asse",
+				"Project/Assembly.pde"
+			],
+			[
+				"cls",
+				"FinalReport/puthesis.cls"
+			],
+			[
+				"bib",
+				"Bibliography/sources.bib"
+			],
+			[
+				"past",
+				"FinalReport/ch-pastwork/chapter-pastwork.tex"
+			],
+			[
+				"the",
+				"FinalReport/thesis.tex"
+			],
+			[
+				"im",
+				"FinalReport/ch-appendicies/implementation.tex"
+			],
+			[
+				"thes",
+				"FinalReport/thesis.tex"
+			],
+			[
+				"nav",
+				"templates/navbar.html"
+			],
+			[
+				"not",
+				"templates/notifications_dropdown.html"
+			],
+			[
+				"notification",
+				"uprightapp/views/notification_views.py"
+			],
+			[
+				"navbar",
+				"templates/navbar.html"
+			],
+			[
+				"style",
+				"static/css/style.css"
+			],
+			[
+				"breadcrum",
+				"templates/breadcrumbs.html"
+			],
+			[
+				"urls",
+				"upright/urls.py"
+			],
+			[
+				"settings.py",
+				"upright/settings.py"
+			],
+			[
+				"status",
+				"templates/status.html"
+			],
+			[
+				"profile",
+				"templates/profile.html"
+			],
+			[
+				"mod",
+				"uprightapp/models.py"
+			],
+			[
+				"pro",
+				"Procfile"
+			],
+			[
+				"setting",
+				"upright/settings.py"
+			],
+			[
+				"notif",
+				"templates/notifications_dropdown.html"
+			],
+			[
+				"groupview",
+				"uprightapp/views/group_views.py"
+			],
+			[
+				"model",
+				"uprightapp/models.py"
+			],
+			[
+				"base",
+				"templates/base.html"
+			],
+			[
+				"multistatus",
+				"templates/multi_status.html"
+			],
+			[
+				"stat",
+				"templates/status.html"
+			],
+			[
+				"wsg",
+				"upright/wsgi.py"
+			],
+			[
+				"settings",
+				"upright/settings.py"
+			],
+			[
+				"sty",
+				"venv/lib/python2.7/site-packages/distribute-0.6.27-py2.7.egg/setuptools/script template.py"
+			],
+			[
+				"sett",
+				"upright/settings.py"
+			],
+			[
+				"mo",
+				"uprightapp/models.py"
+			],
+			[
+				"register",
+				"templates/registration/register_person.html"
+			],
+			[
+				"group",
+				"templates/group.html"
+			],
+			[
+				"spla",
+				"templates/splash.html"
+			],
+			[
+				"grou",
+				"templates/groupbar.html"
+			],
+			[
+				"view",
+				"uprightapp/views/group_views.py"
+			],
+			[
+				"group_",
+				"templates/group_person.html"
+			],
+			[
+				"mult",
+				"templates/multi_status.html"
+			],
+			[
+				"n",
+				"templates/navbar.html"
+			],
+			[
+				"stau",
+				"templates/status.html"
+			],
+			[
+				"p",
+				"templates/profile.html"
+			],
+			[
+				"fie",
+				"uprightapp/croppable/fields.py"
+			],
+			[
+				"vie",
+				"accounts/views.py"
+			],
+			[
+				"form.h",
+				"templates/form.html"
+			],
+			[
+				"login",
+				"templates/registration/login.html"
+			],
+			[
+				"splash",
+				"templates/splash.html"
+			],
+			[
+				"accountsur",
+				"accounts/urls.py"
+			],
+			[
+				"nab",
+				"templates/navbar.html"
+			],
+			[
+				"todo",
+				"todo.txt"
+			],
+			[
+				"multi",
+				"templates/multi_status_box.html"
+			],
+			[
+				"mu",
+				"templates/multi_status.html"
+			],
+			[
+				"styl",
+				"static/css/style.css"
+			],
+			[
+				"comment",
+				"templates/comment.html"
+			],
+			[
+				"sta",
+				"templates/status.html"
+			],
+			[
+				"vi",
+				"accounts/views.py"
+			],
+			[
+				"mul",
+				"templates/multi_status.html"
+			],
+			[
+				"splas",
+				"templates/splash.html"
+			],
+			[
+				"confirm",
+				"templates/registration/confirm.html"
+			],
+			[
+				"form",
+				"accounts/forms.py"
+			],
+			[
+				"register_person",
+				"templates/registration/register_person.html"
+			],
+			[
+				"l",
+				"templates/registration/login.html"
+			],
+			[
+				"confirm.",
+				"templates/registration/confirm.html"
+			],
+			[
+				"sp",
+				"templates/splash.html"
+			],
+			[
+				"prof",
+				"templates/profile.html"
+			],
+			[
+				"home",
+				"templates/home.html"
+			],
+			[
+				"spals",
+				"superusermaker/models.py"
+			],
+			[
+				"bas",
+				"templates/base.html"
+			],
+			[
+				"pr",
+				"templates/profile.html"
+			],
+			[
+				"s",
+				"templates/status.html"
+			],
+			[
+				"",
+				"templates/splash.html"
+			],
+			[
+				"sla",
+				"templates/splash.html"
+			],
+			[
+				"views",
+				"uprightapp/views.py"
+			],
+			[
+				"home.",
+				"templates/home.html"
+			],
+			[
+				"url",
+				"upright/urls.py"
+			],
+			[
+				"st",
+				"templates/status.html"
+			],
+			[
+				"profi",
+				"templates/profile.html"
+			],
+			[
+				"urs",
+				"accounts/urls.py"
+			],
+			[
+				"css",
+				"static/css/style.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 218.0,
+	"status_bar_visible": true
+}

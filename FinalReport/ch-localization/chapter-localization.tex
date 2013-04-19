@@ -2,14 +2,92 @@
 \chapter{Localization\label{ch:localization}}
 
 \section{Problem Description}
+For a robot to perform precise maneuvers, it must first have an understanding of its position and orientation. This is the problem of localization. By using a variety of sensor measurements, each with sources of error, the localization algorithm must produce a single estimate of the quadcopter's pose for use in the controller.  
+
+\section{Considerations of the AR.Drone}
 
 \section{Potential Solutions}
 
 \section{Particle Filter}
 
+	\begin{algorithm}
+		\centering
+		\caption{Particle Filter with Augmented Reality Tag Correction} 
+		\begin{algorithmic}[1]
+			\ForAll {$t$}
+				\If{$buffer\_full()$}
+					\State $propogate(t_{\delta}, v_x, v_y, altd, \theta)$
+				\EndIf
+				\If{$recieved\_tag()$}
+					\State $ar\_correct(\textbf{M})$ \Comment{Transformation matrix from camera to marker}
+				\EndIf
+				\State $x_{est} \gets get\_estimate()$
+			\EndFor
+		\end{algorithmic}
+	\end{algorithm}
+
+\subsection{Buffering Navdata}
+
 \subsection{Propagation Step}
+
+	\begin{algorithm}
+		\centering
+		\caption{Particle Filter Propogation} 
+		\begin{algorithmic}[1]
+			\Function{Propogate}{$t_{\delta}, v_x, v_y, altd, \theta$}
+			\For {$i=1...N$}
+			    \State $x_current \gets x_{t-1}[i]$
+			    \State $x_t[i] \gets n$
+			\EndFor
+			\EndFunction
+		\end{algorithmic}
+	\end{algorithm}
+
+	\subsubsection{Adding Noise to Sensor Measurements}
+	
+	\subsubsection{Converting Local Velocity to Global Velocity}
+	% http://tex.stackexchange.com/questions/28608/how-to-add-a-matrix-to-a-latex-document
+	\[
+	\begin{bmatrix} 
+	  V_{x, global}\\
+	  V_{y, global}\\
+	\end{bmatrix}
+	=
+	\begin{bmatrix} 
+	  cos(\theta) & -sin(\theta)\\
+	  sin(\theta) & cos(\theta)\\
+	\end{bmatrix}
+	\begin{bmatrix} 
+	  V_{x, local}\\
+	  V_{y, local}\\
+	\end{bmatrix}
+	\]
 
 \subsection{Correction Step}
 
-\subsection{Correction Using Augmented Reality Tags}
+	\begin{algorithm}
+		\centering
+		\caption{Particle Filter Augmented Reality Tag Correction} 
+		\begin{algorithmic}[1]
+			\If {$i\geq maxval$}
+			    \State $i\gets 0$
+			\Else
+			    \If {$i+k\leq maxval$}
+			        \State $i\gets i+k$
+			    \EndIf
+			\EndIf
+		\end{algorithmic}
+	\end{algorithm}
+
+	\subsubsection{Determining Global Position from Augmented Reality Tag}
+
+
+	\subsubsection{Weighting Particles}
+
+
+	\subsubsection{Weighted Sampling of Particles}
+
+	\subsubsection{Random Resampling}
+
+
 

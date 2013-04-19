@@ -21,7 +21,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\
 %%%% Author & title page info
 
-\title{Particle Filter Localization for Quadcopters Using Augemented Reality Tags}
+\title{Particle Filter Localization for Unmanned Aerial Vehicles Using Augmented Reality Tags}
 
 \submitted{May 2013}  % degree conferral date (January, April, June, September, or November)
 \copyrightyear{2013}  % year in which the copyright is secured by publication of the dissertation.
@@ -63,6 +63,9 @@
 
 %%% For figures
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
 %\usepackage{subfig,rotate}
 
 %%% for comments
@@ -217,30 +220,15 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 \input{acknowledgements}
 }
 
-\dedication{To my parents. Thanks for the whole tuition thing.}
+\dedication{To my parents.}
 
 \fi  % disable frontmatter
 
+\newcommand{\degree}{\ensuremath{^\circ~}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\
-%%%% Hide some chapters
-
-%%% If you want to produce a pdf that includes only certain chapters, specify them with includeonly, in addition to including all chapters below.
-%\includeonly{ch-intro/chapter-intro}
-%%% You can also specify multiple chapters.
-%\includeonly{ch-intro/chapter-intro,ch-usage/chapter-usage}
-%\includeonly{chap1,chap2,chap3}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Notes:
-
-% Footnotes should be placed after punctuation.\footnote{place here.}
-% Generally, place citations before the period~\cite{anotherauthor}.
-% The proper usage for i.e., and e.g., include commas ``(e.g., option A, option B)''
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Import chapters
+\usepackage{url}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
 
 \begin{document}
 
@@ -255,7 +243,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 \include{ch-pastwork/chapter-pastwork}
 \include{ch-system/chapter-system}
 \include{ch-localization/chapter-localization}
-\include{ch-controller/chapter-controller}
+% \include{ch-controller/chapter-controller}
 \include{ch-results/chapter-results}
 \include{ch-conclusion/chapter-conclusion}
 \appendix % all chapters following will be labeled as appendices
