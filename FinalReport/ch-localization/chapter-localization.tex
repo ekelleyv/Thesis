@@ -10,6 +10,10 @@ For a robot to perform precise maneuvers, it must first have an understanding of
 
 \section{Particle Filter}
 
+%Provide a brief background on the origination of the particle filter, uses, advantages, etc.
+
+%Briefly outline how the particle filter works and all of the component steps.
+
 	\begin{algorithm}
 		\centering
 		\caption{Particle Filter with Augmented Reality Tag Correction} 
@@ -28,7 +32,17 @@ For a robot to perform precise maneuvers, it must first have an understanding of
 
 \subsection{Buffering Navdata}
 
+The localization module receives navdata at 50Hz. Depending on the number of particles and the computational resources, this can be at a higher rate than the particle filter can run the propagation step. Reducing the rate of propagation allows the particle filter to use more particles, which provides better coverage of the position estimate space.
+
+Additionally, while a more rapidly updated pose estimate would be preferable, the accuracy of the measurement is not such that it is especially useful to update at a rate of 50Hz. For example, the maximum velocity that the quadcopter should ever achieve is around 500mm/s. In .02 seconds, the quadcopter will have only moved 10mm, or 1cm. Considering that the desired accuracy of the localization is on the order of tens of centimeters, updating the estimated pose at a reduced rate is acceptable.
+
+As the navdata is recieved, the navdata measurements, such as velocity and yaw, are added to a buffer of size $n$. Every $n$ measurements, the propagate step is called with the simple moving average of the previous $n$ values and the sum of the $\Delta T$ values since the last call to propagate. This results in a propagate rate of $50/n$Hz.
+
+Although the buffer size is currently a hard-coded value, this could be dynamically changed based on the amount of delay between receiving navdata measurements and processing them in the propagate step. This would result in the highest propagate rate possible given a fixed number of particles.
+
 \subsection{Propagation Step}
+
+The first component of a particle filter is the propagation step. In this step, sensor measurements with cumulative errors are used to propagate the particles. 
 
 	\begin{algorithm}
 		\centering

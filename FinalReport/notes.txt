@@ -1,0 +1,32 @@
+Particle Filter Notes
+	Fox, Thrun, et al.
+		"the most fundamental problem to providing a mobile robot with autonomous capabilities" Cox 1991
+		position tracking (known initial pose), seeks to correct small, incremental errors in a robot's odometry vs. global localization
+		Even the most straightforward implementation of particle filters exhibits excellent results for the position tracking and the global localization problem
+		In contrast to the widely used Kalman filters, particle filters can approximate a large range of probability distribution, not just normal distributions
+		Particle filters are computationally efficient, since they focus their resoures on regions in state space with high likelihood
+		Particle filters are easily implemented as any-time filters, by dynamically adapting the number of samples based on available computation resources
+		Easy to implement
+		Monte Carlo localization is a particle filter combined with probabilistic models of robot perception and motion
+		Bayes filters address the problem of estimate the state x of a dynamical system from sensor measurements
+		Bayes filters assume that the environment is Marov... past and future data are conditionally independent if one knows the current state
+		The key idea of Bayes filtering is to estimate the posterior probability density over the state space conditioned on the data
+		Perceptual data vs. odometry data or controls
+			Tag reception vs. velocity
+		Convolving conventional robot kinematics with two independent zero-mean random variables
+		The perceptual model depends on the specific sensor
+		First, the measurement in an ideal, noise-free environment is computed. The desired density is obtained as a mixutre of random variables, composed of one that models the event of getting the correct reading (convolved with small Guassian-distributed measurement noise), ... max range noise etc....
+		If the state space is continuous, as is the case in mobile robot localization, implementing the belief update euqation is not a trivial matter
+		Comparison to Grid-based Localization
+			also Markov
+			MCL is much, move faster
+	Leung, Clark
+		The algorithm propagates particles through time using the survival of the fittest concept.
+		A benefit of the particle filter is that it works for probability distributions of any shape and is able to achieve localization with an unknown initial state.
+		This factor is determined by observations made by exteroceptive sensors (in this case the camera), and is a function of the similarity between expected measurements and observed measurements. 
+		Through numerous trials with different sizes of particle sets, it has been shown that offline localization can be achieved with as little as 300 particles. However, it was determined that 2000 particles are required to assure a high likelihood of convergence.
+		mean shift clustering algorithm
+		Timing analysis indicates that the current implementation of the particle filter on a computer with a 1.5GHz Pentium M processor is unable to achieve real time operation while processing camera images at 1Hz. 
+			SOOO SLOOOWWWWW
+	
+
