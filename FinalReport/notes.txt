@@ -28,5 +28,22 @@ Particle Filter Notes
 		mean shift clustering algorithm
 		Timing analysis indicates that the current implementation of the particle filter on a computer with a 1.5GHz Pentium M processor is unable to achieve real time operation while processing camera images at 1Hz. 
 			SOOO SLOOOWWWWW
-	
+	Yap et al.
+		For mobile robots to effectively navigate their surround- ings, they must have precise estimates of their position and orientation (pose).
+		Typically, a proprioceptive sensor (e.g. odometry) provides estimates for the robot’s motion, and one or more extero- ceptive sensors (e.g. laser rangefinders) are used to provide additional localization information and improve the accuracy of the estimates.
+		Cameras are an attractive option for a number of reasons: They are cheap, small, low powered, and lightweight; they are becoming increasingly common; and they are versatile in that they can also be used for other robotic tasks (e.g. object or place detection and recognition).
+	Alkhatib et al.
+		Kalman filter
+			Optimal only if the system is linear and the error process is Gaussian
+			Other techniques, such as the Extended Kalman Filter and Unscented Kalman filter have been introduced
+		Monte Carlo Techniques
+			Particle filtering is based on Monte Carlo simulation with sequential importance sampling
+			Sequential Importance Sampling is a popular MC integration ethod
+			This process approximates the posterior by a set of weighted samples without making any explicit assumption about its form and can thus be used in general, non-Guassian systems
+			Usually some kind of resampling scheme is used to avoid the problem of degeneracy of drawn particles
+			Whereas the EKF approximates the nonlinear function, the UKF and PF approximate the PDF
+			The PF leads in the case of high variances to the best results
+			
+
+		
 

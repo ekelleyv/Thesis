@@ -2,13 +2,28 @@
 \chapter{Localization\label{ch:localization}}
 
 \section{Problem Description}
-For a robot to perform precise maneuvers, it must first have an understanding of its position and orientation. This is the problem of localization. By using a variety of sensor measurements, each with sources of error, the localization algorithm must produce a single estimate of the quadcopter's pose for use in the controller.  
+For a robot to perform precise maneuvers, it must first have an understanding of its position and orientation, or pose. This is the problem of localization. By using a variety of sensor measurements, both proprioceptive and exteroceptive, the localization algorithm must produce a single estimate of the quadcopter's pose for use in the controller.
 
 \section{Considerations of the AR.Drone}
 
-\section{Potential Solutions}
+As this project will be using the AR.Drone 2.0, the localization algorithm will be built around the capabilities and limitations of this hardware. Considering the low load-capacity of the AR.Drone and the fact that this project aims to use off-the-shelf hardware, the localization algorithm will only be able to use sensors already included in the AR.Drone.
 
-\section{Particle Filter}
+Therefore, the localization must produce an estimate by using a combination of the forward camera, downward camera, accelerometer, gyroscope, magnetometer, ultrasound altimeter, and pressure altimeter. 
+
+\section{Localization Methods}
+
+Localization for mobile robots fall into three main categories: Kalman, Grid-Based, and Monte Carlo.
+
+%ASK: How do Kalman filters work?
+The extended Kalman Filter (EKF)... 
+
+Grid-based localization uses a ``fine grained'' grid approximation of the belief space, that is the space that covers all of the potential position and orientations of the robot.\cite{Fox} For each time step, the probability of a robot being in any one of the grid cells is calculated, first by using odometry and then by exteroceptive sensors such as range finders. While relatively straightforward to implement, this process has many drawbacks. First of all, picking the size of the grid cells can be difficult. If the cells are too large, then the estimate will not be precise. However, if the cells are too small, the algorithm will be slow and very memory-intensive. Additionally, grid-based localization performs poorly in higher-dimensional spaces, as the number of cells grows exponentially with the number of dimensions.
+
+A particle filter is a type of Monte Carlo simulation with sequential importance sampling.\cite{Alkhatib} Essentially, a particle filter keeps track of a large number of particles, which represent possible pose estimation. The particle filter typically moves these particles using proprioceptive sensor measurements convolved with Gaussian noise.\cite{Fox} Then, the particles are weighted with respect to exteroceptive sensor measurements. These particles are then randomly resampled based on these weight values, producing a corrected distribution of particles.
+
+There are many advantages to using a particle filter. Due to the way the process creates an approximation by a set of weighted samples without any explicit assumptions of the approximation's form, it can be used in applications where the assumption of Gaussian noise doesn't necessarily apply.\cite{Alkhatib} 
+
+\section{Particle Filter with Augmented Reality Tags}
 
 %Provide a brief background on the origination of the particle filter, uses, advantages, etc.
 
@@ -40,58 +55,84 @@ As the navdata is recieved, the navdata measurements, such as velocity and yaw, 
 
 Although the buffer size is currently a hard-coded value, this could be dynamically changed based on the amount of delay between receiving navdata measurements and processing them in the propagate step. This would result in the highest propagate rate possible given a fixed number of particles.
 
-\subsection{Propagation Step}
+\subsection{Initialization}
 
-The first component of a particle filter is the propagation step. In this step, sensor measurements with cumulative errors are used to propagate the particles. 
+The particle filter is initialized by creating a set of $N$ particles. Each of these particles represents a potential pose in the configuration space. In particular, each particle at a given time step $t$ is of the form:
 
-	\begin{algorithm}
-		\centering
-		\caption{Particle Filter Propogation} 
-		\begin{algorithmic}[1]
-			\Function{Propogate}{$t_{\delta}, v_x, v_y, altd, \theta$}
-			\For {$i=1...N$}
-			    \State $x_current \gets x_{t-1}[i]$
-			    \State $x_t[i] \gets n$
-			\EndFor
-			\EndFunction
-		\end{algorithmic}
-	\end{algorithm}
+\[x_t = \begin{bmatrix} 
+	  x_t\\
+	  y_t\\
+	  z_t\\
+	  \theta_t\\
+	\end{bmatrix}	
+\]
+
+Where $x_t, y_t, z_t$ are the position, in mm, and $\theta_t$ is the heading, in degrees, of the particle in the global coordinate space. As the low level stabilization and control of the quadcopter is handled by the on-board processor, it is not necessary to include roll and pitch in the pose estimate of the quadcopter as these are not needed for the high level control. The entire set of particles of size $N$ at time step $t$ can be described as:
+
+\[
+X_t = \{x_t[0], x_t[1],...,x_t[N]\}
+\]
+
+Additionally, for each time step, there is a set of associated weights
+
+\[
+W_t = \{w_t[0], w_t[1],...,w_t[N]\}
+\]
+
+Normalized, such that
+
+\[
+\sum_{i=0}^N w_t[i] = 1
+\]
+
+
+\subsubsection{Coordinate Frame Conventions}
+
+The coordinate frame follows the standard set by the ardrone\_autonomy package. As shown in Figure [INSERT FIGURE], the coordinate frame is right-handed, with positive $x$ as forward, positive $y$ as left, and positive $z$ as up. In terms of rotation, a counter clockwise rotation about an axis is positive. Heading ranges from -180 degrees to 180 degrees, with 0 as forward. When the particle filter is initialized, the global coordinate frame is set equal to the first local coordinate frame.
+
+%Include graphic showing the coordinate frame of the quadcopter
+
+
+\subsection{Prediction Step}
+
+	The first component of a particle filter is the prediction step. In this step, the position of every particle is updated by using the sensor measurements contained in the navdata messages. Specifically, the prediction step uses the elapsed time, $\Delta t$, fused velocity measurements, $v_x$ and $v_y$, yaw reading, $\theta$, and ultrasound value, $z_{ultra}$.
+
+	The prediction step then subtracts the value of $\theta_{t-1}$, the value of theta from the previous estimate, from $\theta$ to produce $\Delta\theta$. Then, for every particle $i$, a new pose $x_t[i]$ is generated using the previous pose, $x_{t-1}[i]$ and the values $\Delta t, v_x, v_y, \Delta\Theta,$ and $z_{ultra}$.
 
 	\subsubsection{Adding Noise to Sensor Measurements}
+		In order to update the pose estimation for a given particle, noise is first added to the sensor measurements in order to model the sensor noise. By adding noise to the particles, the distribution of particles should expand to include all of the possible belief states. 
+
+		For each sensor value, a new ``noisy'' value is generating by a sampling from a Gaussian distribution with a mean of the sensor reading and a standard deviation, $\sigma$, which models in accuracy of the sensor. 
 	
 	\subsubsection{Converting Local Velocity to Global Velocity}
-	% http://tex.stackexchange.com/questions/28608/how-to-add-a-matrix-to-a-latex-document
-	\[
-	\begin{bmatrix} 
-	  V_{x, global}\\
-	  V_{y, global}\\
-	\end{bmatrix}
-	=
-	\begin{bmatrix} 
-	  cos(\theta) & -sin(\theta)\\
-	  sin(\theta) & cos(\theta)\\
-	\end{bmatrix}
-	\begin{bmatrix} 
-	  V_{x, local}\\
-	  V_{y, local}\\
-	\end{bmatrix}
-	\]
+		In order to update the pose of each particle in the global frame, the values $v_{x,noisy}$ and $v_{y,noisy}$, must be transformed from the local coordinate frame of the quadcopter to the global coordinate frame. First, the new heading of the particle is determined by
+
+		\[\theta_t[i] = \theta_{t-1}[i]+ \Delta\theta_{noisy}\]
+
+		Then, the global velocity can be found by
+		\[
+		\begin{bmatrix} 
+		  v_{x, global}\\
+		  v_{y, global}\\
+		\end{bmatrix}
+		=
+		\begin{bmatrix} 
+		  cos(\theta) & -sin(\theta)\\
+		  sin(\theta) & cos(\theta)\\
+		\end{bmatrix}
+		\begin{bmatrix} 
+		  v_{x, noisy}\\
+		  v_{y, noisy}\\
+		\end{bmatrix}
+		\]
+
+	\subsubsection{Position Update}
+		Now that the velocity is in the global coordinate frame, Euler integration is used to determine the new position of the particle
+
+		\[x_t[i] = \Delta t*v_{x, global} + x_{t-1}[i]\]
+		\[y_t[i] = \Delta t*v_{y, global} + y_{t-1}[i]\]
 
 \subsection{Correction Step}
-
-	\begin{algorithm}
-		\centering
-		\caption{Particle Filter Augmented Reality Tag Correction} 
-		\begin{algorithmic}[1]
-			\If {$i\geq maxval$}
-			    \State $i\gets 0$
-			\Else
-			    \If {$i+k\leq maxval$}
-			        \State $i\gets i+k$
-			    \EndIf
-			\EndIf
-		\end{algorithmic}
-	\end{algorithm}
 
 	\subsubsection{Determining Global Position from Augmented Reality Tag}
 
