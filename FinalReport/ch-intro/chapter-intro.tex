@@ -2,7 +2,7 @@
 \chapter{Introduction\label{ch:intro}}
 
 % Talk about the increasing use of quadcopters for a variety of uses.
-In recent years, research using micro aerial vehicles (MAVs) has increased rapidly. Multi rotor aircraft, such as quadcopters (also known as quadrotors), have proven to be powerful platforms for applications in a variety of fields, from aerial photography to search and rescue.\cite{} Once prohibitively expensive, multi rotor aircraft have decreased substantially in price, ranging from a few hundred dollars to several thousand dollars. Additionally, on-board control systems have greatly added to the stability and ease of control of these aircraft, with many quadcopters using pre-programmed routines for difficult procedures such as takeoff and landing.
+In recent years, research using micro aerial vehicles (MAVs) has increased rapidly. Multi rotor aircraft, such as quadcopters (also known as quadrotors), have proven to be powerful platforms for applications in a variety of fields, from aerial photography to search and rescue~\cite{}. Once prohibitively expensive, multi rotor aircraft have decreased substantially in price, ranging from a few hundred dollars to several thousand dollars. Additionally, on-board control systems have greatly added to the stability and ease of control of these aircraft, with many quadcopters using pre-programmed routines for difficult procedures such as takeoff and landing.
 
 
 %Slightly repetitive. Also should this be in the related work section? What is the best way to split this up?
@@ -21,35 +21,37 @@ While there are currently several different methods for capturing these models, 
 \section{Current Acquisition Methods}
 
 \subsection{Manual Model Creation}
+The most common method of model acquisition is having a trained modeler produce a 3D model using reference imagery and measurements. Objects are tediously crafted in CAD software in a process similar to sculpting. While this technique is used extensively in video games and films, it is typically too time consuming and expensive for most archeology projects.
 
 \subsection{Laser Scanners}
-Laser rangefinder technology is the ``gold standard'' of 3D model acquisition in terms of precision. Modern scanners can produce sub millimeter scans, which make them a great choice for detailed digitization of statues. Combined with high-resolution photograph texture-mapping, very few techniques can match the precision and quality of these scans. The Digital Michelangelo Project showed the power and precision of laser scanners by scanning several different statues, including Michelangelo's David, to 1/4mm accuracy.\cite{Levoy}
+Laser rangefinder technology is the ``gold standard'' of 3D model acquisition in terms of precision. Modern scanners can produce sub millimeter scans, which make them a great choice for detailed digitization of statues. Combined with high-resolution photograph texture-mapping, very few techniques can match the precision and quality of these scans. The Digital Michelangelo Project showed the power and precision of laser scanners by scanning several different statues, including Michelangelo's David, to 1/4mm accuracy~\cite{Levoy}.
 
 \begin{figure}
 \centering
 \includegraphics[height=200px]{../images/david_scan.jpg}
-\caption{An example of a laser scanner setup used by the Digital Michelangelo Project \cite{Levoy}.}
+\caption{An example of a laser scanner setup used by the Digital Michelangelo Project~\cite{Levoy}.}
 \end{figure}
 
-However, laser scanners do have several drawbacks. The equipment is extremely expensive, bulky, and fragile. The Michelangelo Project had to transport over 4 tons of equipment to Italy in order to produce their scans. Additionally, laser scans involve immense setup and can take many hours. The scan of David took over a thousand man-hours to scan and even more than that in post processing \cite{Levoy}.
+However, laser scanners do have several drawbacks. The equipment is extremely expensive, bulky, and fragile. The Michelangelo Project had to transport over 4 tons of equipment to Italy in order to produce their scans. Additionally, laser scans involve immense setup and can take many hours. The scan of David took over a thousand man-hours to scan and even more than that in post processing~\cite{Levoy}.
 
 \subsection{Multi-View Stereo}
-Multi-view stereo uses a collection of 2D images to reconstruct a 3D object model. By viewing a single object from hundreds of different camera positions, a 3D model can be generated. Although this technique originally required precisely known camera coordinates, recent algorithms can produce a 3D model from an unordered collection of images with unknown camera positions, assuming that there is sufficient coverage. Existing software packages such as Bundler and Agisoft Photoscan can produce high-quality 3D reconstructions using these unordered image collections. \cite{bundler}\cite{photoscan}
+Multi-view stereo uses a collection of 2D images to reconstruct a 3D object model. By viewing a single object from hundreds of different camera positions, a 3D model can be generated. Although this technique originally required precisely known camera coordinates, recent algorithms can produce a 3D model from an unordered collection of images with unknown camera positions, assuming that there is sufficient coverage. Existing software packages such as Bundler and Agisoft Photoscan can produce high-quality 3D reconstructions using these unordered image collections~\cite{bundler, Agisoft}.
 
 The ability to use a collection of images without precise camera position information means that these 3D objects can be modeled substantially faster than with a laser scanner. With a smaller object, it is a relatively simple process to take pictures of the object from many different angles. However, for a larger object, such as a statue or building, the problem of gathering imagery becomes substantially more difficult.
 
 \begin{figure}
 \centering
 \includegraphics[height=200px]{../images/photoscan.png}
-\caption{A 3D model of a statue generated by Agisoft Photoscan. Notice the derived camera planes encompassing the statue \cite{photoscan}.}
+\caption{A 3D model of a statue generated by Agisoft Photoscan. Notice the derived camera planes encompassing the statue~\cite{Agisoft}.}
 \end{figure}
 
-\subsection{Stereo Vision with Infrared Pattern}
+\subsection{Microsoft Kinect}
 
-%Talk about the Kinect
+Several groups have researched using the Microsoft Kinect for model acquisition. As the Kinect produces an RGB image with depth information, either the Kinect or the model most be moved in order to produce a complete scan. While this has been found to be useful in scanning small to medium size objects, such as people, the Kinect has several limitations. First of all, the depth range is rather short, on the order of a few meters. Additionally, because the depth is partially determined using an infrared pattern, the Kinect does not work in locations with a large amount of background infrared light, such as outdoors.
+
 
 \section{Problem Definition}
-We look to create a system to capture imagery of large 3D objects for use in multi-view stereo software. This system has several requirements.
+The goal of this system to capture imagery of large 3D objects for use in multi-view stereo software. This system has several requirements.
 
 \begin{enumerate}
 \item
@@ -60,7 +62,7 @@ The system should be substantially cheaper than laser scanning.
 \item
 \textbf{Easy to Use}
 
-This system should be able to be deployed by users with minimal training. Additionally, the hardware should be off-the-shelf and easily accessible.
+This system should be able to be deployed by users with minimal training and setup. Additionally, the hardware should be off-the-shelf and easily accessible.
 
 \item
 \textbf{Complete Coverage}
@@ -76,14 +78,14 @@ The system must produce sufficiently high resolution, non-blurry images for use 
 
 \section{Proposed Solution}
 
-We propose using low-cost autonomous quadcopters to gather imagery needed for use in multi-view stereo software. By flying a quadcopter with a mounted camera around the target object, we can quickly and thoroughly capture images of the target from a wide variety of positions. Using quadcopters has many advantages.
+Proposed is a system which uses low-cost autonomous quadcopters to gather imagery needed for use in multi-view stereo software. By flying a quadcopter with a mounted camera around the target object, imagery can quickly be gathered from a wide variety of positions around the object. Using quadcopters has many advantages.
 
 \begin{enumerate}
 \item
 Quadcopters can capture images from positions unreachable by ground-based cameras.
 
 \item
-By methodically flying around the target object at different altitudes, we can guarantee complete coverage of the target object.
+By methodically flying around the target object at different altitudes, complete coverage of the target object can be achieved.
 
 \item
 The imagery can be captured very quickly, on the order of a few minutes.

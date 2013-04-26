@@ -1,0 +1,10 @@
+Todo:
+	Acknowledgements
+	Related Works
+	Results
+	Conclusion
+
+Done:
+	Introduction
+	System Design
+	Localization

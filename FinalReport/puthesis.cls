@@ -42,6 +42,8 @@
 \newcommand*{\tablespacing}{
   \singlespacing
 }
+
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
 %% Command inserted into the document immediately after \begin{document} to place all frontmatter
 %%   This was formerly named 'begincmd' and called below in \AtBeginDocument{}
 %%   However, that is not compatible with package 'hyperref'. \tableofcontents needs
@@ -49,7 +51,7 @@
 \newcommand*{\makefrontmatter}{
 \bodyspacing
 \frontmatter\maketitlepage\makeabstract
-\makeacknowledgements\makededication\maketoc
+\makeacknowledgements\makededication\makehonorcode\maketoc
 \clearpage\makelof\clearpage\makelos
 \clearpage\mainmatter
 }
@@ -60,6 +62,7 @@
 \def\department#1{\gdef\@dept{#1}}
 \long\def\acknowledgements#1{\gdef\@acknowledgements{#1}}
 \def\dedication#1{\gdef\@dedication{#1}}
+\def\honorcode#1{\gdef\@honorcode{#1}}
 \newcommand{\maketitlepage}{{
   \thispagestyle{empty}
   \sc
@@ -67,26 +70,21 @@
   \begin{center}
     \LARGE \@title
   \end{center}
-  \vspace{.6in}
-  \extravspace{.6in}
+  \vspace{.8in}
   \begin{center}
     \@author
   \end{center}
-  \vspace{.6in}
-  \extravspace{.6in}
+  \vspace{.8in}
   \begin{center}
     Princeton University \\ 
     Department of Computer Science\\
   \end{center}
   \vspace{.3in}
-  \extravspace{.3in}
   \begin{center}
-    Advisors: \\
+    Advisor: \\
     \@adviser \\
-    Professor Robert Stengel
   \end{center}
   \vspace{.3in}
-  \extravspace{.3in}
   \begin{center}
     \@submitted
   \end{center}
@@ -132,6 +130,18 @@
     \vspace*{1.5in}
     \begin{flushright}
       \@dedication
+    \end{flushright}
+    \clearpage
+  \fi
+  }
+\def\makehonorcode{
+  \ifx\@honorcode\undefined
+  \else
+    \vspace*{6.5in}
+    \begin{flushright}
+      \@honorcode
+      \vspace{.3in}
+      \raisebox{-\baselineskip}{\shortstack{\underline{\hspace{3in}}\\\\Edward Francis Kelley V}}
     \end{flushright}
     \clearpage
   \fi
