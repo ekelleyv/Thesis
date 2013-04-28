@@ -2,13 +2,13 @@
 \chapter{Localization\label{ch:localization}}
 
 \section{Problem Description}
-	For a robot to perform precise maneuvers, it must first have an understanding of its position and orientation, or pose. This is the problem of localization. By using a variety of sensor measurements, both proprioceptive and exteroceptive, the localization algorithm must produce a single estimate of the quadcopter's pose for use in the controller.
+	For a robot to perform precise maneuvers, it must first have an understanding of its position and orientation, or pose. This is the problem of localization. By using a variety of sensor measurements, the localization algorithm must produce a single estimate of the quadcopter's pose for use in the controller.
 
 \section{Considerations of the AR.Drone}
 
-	As this project will be using the AR.Drone 2.0, the localization algorithm will be built around the capabilities and limitations of this hardware. Considering the low load-capacity of the AR.Drone and the fact that this project aims to use off-the-shelf hardware, the localization algorithm will only be able to use sensors already included in the AR.Drone.
+	As this project uses the AR.Drone 2.0, the localization algorithm is built around the capabilities and limitations of this hardware. Considering the low load-capacity of the AR.Drone and the fact that this project aims to use off-the-shelf hardware, the localization algorithm may only use the sensors included in the AR.Drone.
 
-	Therefore, the localization must produce an estimate by using a combination of the forward camera, downward camera, accelerometer, gyroscope, magnetometer, ultrasound altimeter, and pressure altimeter. 
+	Therefore, the localization must produce an estimate by using some combination of the forward camera, downward camera, accelerometer, gyroscope, magnetometer, ultrasound altimeter, and pressure altimeter. 
 
 \section{Localization Methods}
 
@@ -16,7 +16,7 @@
 
 	%ASK: How do Kalman filters work?
 	\subsection{Extended Kalman Filter}
-	The extended Kalman Filter (EKF) is used extensively in mobile robot localization. The EKF is a nonlinear version of the Discrete Kalman Filter first introduced by R. E. Kalman in 1960. The EKF linearizes about the current mean and covariance in  method similar to a Taylor series. The EKF contains two stages, a prediction step and a correction step. In the prediction step, the new state and error covariance are projected. Then, in the correction step, the estimate and error covariance are updated in response to sensor measurements~\cite{Welch}. However, Kalman filters have the disadvantage of only being able to approximate normal distributions.
+	The extended Kalman Filter (EKF) is used extensively in mobile robot localization. The EKF is a nonlinear version of the Discrete Kalman Filter first introduced by Rudolf Emil Kalman in 1960~\cite{Kalman}. The EKF linearizes about the current mean and covariance in  method similar to a Taylor series. The EKF contains two stages, a prediction step and a correction step. In the prediction step, the new state and error covariance are projected. Then, in the correction step, the estimate and error covariance are updated in response to sensor measurements~\cite{Welch}. However, Kalman filters have the disadvantage of only being able to approximate normal distributions.
 
 	%I need a better reason why I am not using Kalman filter
 	\subsection{Grid-Based Markov Localization}
@@ -46,20 +46,20 @@
 	\end{algorithm}
 
 	%Provide a brief background on the origination of the particle filter, uses, advantages, etc.
-	The particle filter has been chosen for this project due to its flexibility, ease of implementation, and performance. Typically, the prediction step of the particle filter uses proprioceptive sensors, such as accelerometers, gyroscopes, and rotary encoders. Then, this estimate is corrected by using exteroceptive sensors, such as infrared, laser, or ultrasound.
+	The particle filter has been chosen for this project due to its flexibility, ease of implementation, and performance. In typical implementations of particle filters for mobile robots, the prediction step uses proprioceptive sensors, such as accelerometers, gyroscopes, and rotary encoders. Then, this estimate is typically corrected by using exteroceptive sensors, such as infrared, laser, or ultrasound.
 
-	However, due to the lack of horizontal range sensing, this particle filter uses different division between the prediction and correction steps. The prediction step uses the stock configuration of sensors in the AR.Drone, specifically the fused velocity, gyroscope, and ultrasound altimeter measurements. Then, the correction step uses an estimated global position determined by augmented reality tags to resample the particles.
+	However, due to the lack of horizontal range sensing, this particle filter uses a different division between the prediction and correction steps. The prediction step uses the stock configuration of sensors in the AR.Drone, specifically the fused velocity, gyroscope, and ultrasound altimeter measurements. Then, the correction step uses an estimated global position determined by augmented reality tags to resample the particles.
 
 
 	\subsection{Buffering Navdata}
 
-		The localization module receives navdata at 50Hz. Depending on the number of particles and the computational resources, this can be at a higher rate than the particle filter can run the propagation step. Reducing the rate of propagation allows the particle filter to use more particles, which provides better coverage of the position estimate space.
+		The localization module receives navdata at 50Hz. Depending on the number of particles and computational resources available to the localization algorithm, this can be a higher rate than the particle filter can run the propagation step. Reducing the rate at which propagation is run allows the particle filter to use more particles, providing better coverage of the pose estimate space and increasing the likelihood of convergence.
 
-		Additionally, while a more rapidly updated pose estimate would be preferable, the accuracy of the measurement is not such that it is especially useful to update at a rate of 50Hz. For example, the maximum velocity that the quadcopter should ever achieve is around 500mm/s. In .02 seconds, the quadcopter will have only moved 10mm, or 1cm. Considering that the desired accuracy of the localization is on the order of tens of centimeters, updating the estimated pose at a reduced rate is acceptable.
+		Additionally, while a more rapidly updated pose estimate would be preferable, the accuracy of the measurement is not such that it is especially useful to update at a rate of 50Hz. For example, the maximum velocity that the quadcopter should ever achieve in this system is around 500mm/s. In .02 seconds, the quadcopter will have only moved 10mm, or 1cm. Considering that the desired accuracy of the localization is on the order of tens of centimeters, updating the estimated pose at a reduced rate is acceptable.
 
 		As the navdata is recieved, the navdata measurements, such as velocity and yaw, are added to a buffer of size $n$. Every $n$ measurements, the propagate step is called with the simple moving average of the previous $n$ values and the sum of the $\Delta T$ values since the last call to propagate. This results in a propagate rate of $50/n$Hz.
 
-		Although the buffer size is currently a hard-coded value, this could be dynamically changed based on the amount of delay between receiving navdata measurements and processing them in the propagate step. This would result in the highest propagate rate possible given a fixed number of particles.
+		Although the buffer size is currently a hard-coded value, this could be dynamically changed based on the amount of delay between receiving navdata measurements and processing them in the propagate step. This would result in the highest propagate rate possible given a fixed number of particles. On the other hand, the buffer size could remain fixed with the particle filter adjusting the total number of particles, allowing for the best possible coverage at a guaranteed update rate.
 
 	\subsection{Initialization}
 
@@ -97,12 +97,10 @@
 			\begin{figure}
 			\centering
 				\includegraphics[width=300px]{../images/coordinates.png}
-				\caption{AR.Drone Coordinate System~\cite{ARDroneEducation}.}
+				\caption{AR.Drone Coordinate System~\cite{ARDroneEducation}.}\label{fig:coords}
 			\end{figure}
 
-			The coordinate frame follows the standard set by the ardrone\_autonomy package. As shown in Figure [INSERT FIGURE], the coordinate frame is right-handed, with positive $x$ as forward, positive $y$ as left, and positive $z$ as up. In terms of rotation, a counter clockwise rotation about an axis is positive. Heading ranges from -180 degrees to 180 degrees, with 0 as forward. When the particle filter is initialized, the global coordinate frame is set equal to the first local coordinate frame.
-
-%Include graphic showing the coordinate frame of the quadcopter
+			The coordinate frame follows the standard set by the ardrone\_autonomy package. As shown in Figure~\ref{fig:coords}, the coordinate frame is right-handed, with positive $x$ as forward, positive $y$ as left, and positive $z$ as up. In terms of rotation, a counter clockwise rotation about an axis is positive. Heading ranges from -180 degrees to 180 degrees, with 0 centered along the $x$-axis. When the particle filter is initialized, the global coordinate frame is set equal to the first instance of the local coordinate frame.
 
 
 	\subsection{Prediction Step}
@@ -128,17 +126,19 @@
 			\end{algorithmic}
 		\end{algorithm}
 
-		The first component of a particle filter is the prediction step. In this step, the position of every particle is updated by using the sensor measurements contained in the navdata messages. Specifically, the prediction step uses the elapsed time, $\Delta t$, fused velocity measurements, $v_x$ and $v_y$, yaw reading, $\theta$, and ultrasound value, $z_{ultra}$.
+		The first component of a particle filter is the prediction step. In this step, the position of every particle is updated by using the sensor measurements contained in the navdata messages. Specifically, the prediction step uses the elapsed time, $\Delta t$, fused velocity measurements, $v_x$ and $v_y$, yaw reading, $\theta$, and ultrasound altimeter value, $z_{ultra}$.
 
 		The prediction step then subtracts the value of $\theta_{t-1}$, the value of theta from the previous estimate, from $\theta$ to produce $\Delta\theta$. Then, for every particle $i$, a new pose $\textbf{x}_t[i]$ is generated using the previous pose, $\textbf{x}_{t-1}[i]$ and the values $\Delta t, v_x, v_y, \Delta\theta,$ and $z_{ultra}$.
 
 		\subsubsection{Adding Noise to Sensor Measurements}
-			In order to update the pose estimation for a given particle, noise is first added to the sensor measurements in order to model the sensor noise. By adding noise to the particles, the distribution of particles should expand to include all of the possible belief states. 
+			In order to update the pose estimation for a given particle, noise is first added to the sensor measurements in order to model the sensor noise. By adding noise to the particles, the distribution of particles should expand to include all of the possible belief states.
+
+			%INCLUDE A GRAPHIC SHOWING THE SPREADING OUT OF PARTICLES OVER TIME
 
 			For each sensor value, a new ``noisy'' value is generating by a sampling from a Gaussian distribution with a mean of the sensor reading and a standard deviation, $\sigma$, which models in accuracy of the sensor. 
 		
 		\subsubsection{Converting Local Velocity to Global Velocity}
-			In order to update the pose of each particle in the global frame, the values $v_{\textit{x,noisy}}$ and $v_{\textit{y,noisy}}$, must be transformed from the local coordinate frame of the quadcopter to the global coordinate frame. First, on Line~\ref{predict:line:theta}, the new heading of the particle is determined by adding the $\Delta\theta_{\textit{noisy}}$ to the estimated heading of the last time step, $\theta_{t-1}[i]$.
+			In order to update the pose of each particle in the global frame, the values $v_{\textit{x,noisy}}$ and $v_{\textit{y,noisy}}$, must be transformed from the local coordinate frame of the quadcopter to the global coordinate frame. First, on Line~\ref{predict:line:theta}, the new heading of the particle is determined by adding the value $\Delta\theta_{\textit{noisy}}$ to the estimated heading of the last time step, $\theta_{t-1}[i]$.
 
 			Then, on Line~\ref{predict:line:transform}, the global velocity is found by
 			\[
@@ -174,8 +174,8 @@
 				\State{$\textbf{B} \gets \textit{lookupTransform(base, camera)}$} 
 				% \Comment{Transformation between quadcopter base an camera}
 				\State{$\textbf{T} \gets \textbf{M}\textbf{P}^T\textbf{B}^T $}\label{correct:line:transformation}
-				\State{$(x_{\textit{correct}}, y_{\textit{correct}}, z_{\textit{correct}}) \gets \textit{getTranslation}(\textbf{T})$}
-				\State{$\theta_{\textit{correct}} \gets \textit{getHeading}(\textbf{T})$}
+				\State{$(x_{\textit{correct}}, y_{\textit{correct}}, z_{\textit{correct}}) \gets \textit{getTranslation}(\textbf{T})$}\label{correct:line:gettranslation}
+				\State{$\theta_{\textit{correct}} \gets \textit{getHeading}(\textbf{T})$}\label{correct:line:getrotation}
 
 				\\
 				\\
@@ -219,18 +219,18 @@
 		\end{spacing}
 
 		\subsubsection{Determining Global Position from Augmented Reality Tag}
-			The main concept in the correction step is to use a known marker position and a calculated camera-to-marker transformation to determine the global position of the quadcopter. Using this calculated global position, the particles are resampled to correct for the drift accumulated by using local measurements.
+			The main concept in the correction step is to use a known marker position and a calculated camera-to-marker transformation in order to determine the global position of the quadcopter. Using this calculated global position, the particles, weighted by their similarity the calculated global position, are resampled to correct for the drift accumulated by using local measurements.
 
-			The first step is to determine the pose of the quadcopter in the global coordinate frame. Augmented reality tags with different identifying patterns are placed in known positions and orientations (e.g. axis aligned in the corners of a 5m square). These positions are published as ROS static transforms, allowing them to be retrieved by a $lookupTransform()$ command. When a tag is detected by the ar\_pose library, a marker is published containing the id of the tag and the transformation from camera to tag, $\textbf{P}$. Then, the transformations from world to the tag,$\textbf{M}$,  and from quadcopter base to camera,$\textbf{B}$, are retrieved using $lookupTransform()$. Through matrix multiplication, the transformation from world to quadcopter, $\textbf{T}$, can be obtained.
+			The first step is to determine the pose of the quadcopter in the global coordinate frame using augmented reality tags. These tags, each with unique binary patterns, are placed in known positions and orientations (e.g. axis aligned in the corners of a 5m square). These positions are published as ROS static transforms, allowing them to be retrieved by a \textit{lookupTransform()} command. When a tag is detected by the \texttt{ar\_pose} library, a marker is published containing the id of the tag and the transformation matrix from the camera to the tag, $\textbf{P}$. Then, the transformation matrices from the world frame to the tag,$\textbf{M}$,  and from quadcopter base to camera,$\textbf{B}$, are retrieved using \textit{lookupTransform()}. Through matrix multiplication, the transformation from world to quadcopter, $\textbf{T}$, can be obtained as follows:
 
 			\[\textbf{T} = \textbf{M}\textbf{P}^T\textbf{B}^T \]
 
-			The ROS transformation library uses the transformation matrix, $\textbf{T}$, to get the estimated position and orientation of the quadcopter, $x_{correct}$.
+			On lines~\ref{correct:line:gettranslation} and~\ref{correct:line:getrotation}, the ROS transformation library is used to derive the estimated position and orientation of the quadcopter, $x_{correct}$, from the transformation matrix $\textbf{T}$.
 
 		\subsubsection{Weighting Particles}
-			Each particle is assigned a weight by comparing the particle position, $x_t[i]$, the position estimate generated using the augmented reality tag, $x_{correct}$. First, the euclidean distance between these two positions and the difference between $\theta$ estimates are calculated on lines \ref{correct:line:euclid} and~\ref{correct:line:theta}.
+			Each particle is assigned a weight by comparing the particle pose, $x_t[i]$, to the pose estimate generated using the augmented reality tag, $x_{correct}$. First, the Euclidean distance between the two positions and the difference between $\theta$ estimates are calculated on lines \ref{correct:line:euclid} and~\ref{correct:line:theta}.
 
-			Then, on Line~\ref{correct:line:pdf}, position and orientation weights are determined by inputing \textit{dist} and \textit{diff} into zero-mean probability density functions with standard deviations derived from testing.
+			Then, on line~\ref{correct:line:pdf}, position and orientation weights are determined by inputing \textit{dist} and \textit{diff} into zero-mean probability density functions with standard deviations derived from testing.
 
 			$pdf(x, \mu, \sigma)$ is defined as:
 
@@ -250,14 +250,14 @@
 		 
 		\subsubsection{Random Resampling}
 
-			Every time the correction step is called, a small percentage of particles are replaced using the location as estimated by using the augmented reality tags. As the quadcopter will often fly for several meters without picking up a tag, the particles will become very spread out to account for sensor drift. Without replacement, there is a chance that the quadcopter would not be able to recover from a large amount of drift as no particle would be close enough to the actual position to accurately correct. By resampling, the particles will more rapidly cluster when the quadcopter is over a tag. There is a tradeoff of doing this, however. On rare occasions, the ar\_pose library mistake the $marker\_id$ of the tag, resulting in an incorrect transformation. If the resample rate is too high, then a large number of particles will teleport to the wrong position, resulting in a large jump in estimated pose. If this resample rate is small enough, then it will still accomplish the goal of quickly clustering particles when above tags, but will be robust to incorrect tag transformations.
+			Every time the correction step is called, a small percentage of particles are replaced using the pose as estimated by using the augmented reality tags. As the quadcopter will often fly for several meters without picking up a tag, the particles will become very spread out to account for sensor drift. Without replacement, there is a chance that the quadcopter would not be able to recover from a large amount of drift as no particle would be close enough to the actual position to accurately correct. By resampling, the particles will more rapidly cluster when the quadcopter is over a tag. There is a tradeoff of doing this, however. On rare occasions, the \texttt{ar\_pose} library mistake the $marker\_id$ of the tag, resulting in an incorrect transformation. If the resample rate is too high, then a large number of particles will essentially ``teleport'' to the wrong position, resulting in a large jump of estimated pose. If this resample rate is small enough, then it will still accomplish the goal of quickly clustering particles when above tags, but will be robust enough to recover from incorrect tag transformations.
 
 
 		\subsubsection{Weighted Sampling of Particles}
 
-			The rest of the particles are chosen using a weighted sampling. Essentially, particles that are closest to the position calculated using the augmented reality tags will be chosen with a higher probability, allowing other particles to die out. This is often called ``survial of the fittest'' sampling. The naive method would be to keep an array of cumulative weights. This way, a random number generated between 0 and 1 could be used to search through the array and pick particles with the correct distribution. This would result in a lookup time of $O(\log{N})$ However, using Walker's alias method, a small amount of preprocessing can reduce these lookups to $O(1)$~\cite{Walker}. As there are many particles and the correct step can be called at a very high frequency, it is important to reduce the lookup time as much as possible.
+			The rest of the particles are chosen using a weighted sampling. Essentially, particles that are closest to the position calculated using the augmented reality tags will be chosen with a higher probability, allowing other particles to die out. This is often called ``survial of the fittest'' sampling. The naive method of performing weighted sampling would be to keep an array of cumulative weights. This way, a random number generated between 0 and 1 could be used to search through the array and pick particles with the correct distribution. This would result in a lookup time of $O(\log{N})$ However, using Walker's alias method, a small amount of preprocessing can reduce these lookups to $O(1)$~\cite{Walker}. As there are many particles and the correction step can be called at a very high frequency, it is important to reduce the lookup time as much as possible.
 
 	\subsection{Pose Estimate from Particles}
-		At the end of call to the localization algorithm, a new pose estimate is generated using the particle distribution. This is done by taking a linear combination of all of the particles. This method works reasonably well for this application as the particles tend to stay in a single cluster. In applications where multiple belief clusters will exist, such as in a particle filter with an unknown start position, this solution would not be sufficient and a technique such as mean shift clustering should be used. 
+		At the end of call to the localization algorithm, a new pose estimate is generated using the particle distribution. This is done by taking a linear combination of all of the particles. This method works reasonably well for this application as the particles tend to stay in a single cluster. In applications where multiple belief clusters are likely to exist, such as in a particle filter with an unknown start position, this solution would not be sufficient and a technique such as mean shift clustering should be used. 
 
 

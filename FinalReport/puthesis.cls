@@ -50,8 +50,8 @@
 %%   to be declared from within the document itself. 
 \newcommand*{\makefrontmatter}{
 \bodyspacing
-\frontmatter\maketitlepage\makeabstract
-\makeacknowledgements\makededication\makehonorcode\maketoc
+\frontmatter\maketitlepage\makehonorcode\makeabstract
+\makeacknowledgements\makededication\maketoc
 \clearpage\makelof\clearpage\makelos
 \clearpage\mainmatter
 }
@@ -70,14 +70,19 @@
   \begin{center}
     \LARGE \@title
   \end{center}
-  \vspace{.8in}
+  \vspace{.6in}
   \begin{center}
     \@author
   \end{center}
-  \vspace{.8in}
+  \vspace{.6in}
   \begin{center}
-    Princeton University \\ 
+    Submitted to the\\
     Department of Computer Science\\
+    in partial fulfillment of the requirements for\\
+    the degree of Bachelor of Arts\\
+    Princeton University
+
+    
   \end{center}
   \vspace{.3in}
   \begin{center}
