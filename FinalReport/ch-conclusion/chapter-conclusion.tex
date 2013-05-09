@@ -1,2 +1,10 @@
 \chapter{Conclusion\label{ch:conclusion}}
 
+This thesis proposed a method for 3D model generation using autonomous quadcopters and multi-view stereo. Such a system would be portable, cheap, and easily deployable in a range of applications such as archeology and video game development. 
+Specifically, this thesis presented a localization method for low-cost quadcopters using a particle filter with augmented reality tags. This system was shown to perform substantially better than using local sensor measurements alone.
+
+\section{Future Work}
+
+The next step in creating this system for model generation would be to fully integrate this localization algorithm with a controller and path planner. While much effort was put into integrating this work and the controller produced by Sarah Tang, various hardware issues prevented fully autonomous flight from being achieved.
+
+Once basic waypoint tracking is implemented, the system could autonomously generate the path it flies around the object so as too improve coverage and fly around irregularly shaped objects. Eventually, such a system should be packaged in a way such that it can easily be used with the AR.Drone with very little setup, bringing the ability to quickly develop 3D models of large objects to researchers across many fields.

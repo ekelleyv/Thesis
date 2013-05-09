@@ -1,16 +1,16 @@
 
 \chapter{Related Work\label{ch:pastwork}}
 
+The past decade has seen a huge increase in the use of quadcopters for a variety of applications. With the improvement of stabilization software, quadcopters have seen a rise in popularity as a stable, cheap, and highly maneuverable aerial platform. 
+
 \section{3D Model Acquisition Using Quadcopters}
 
-	The past decade has seen a huge increase in the use of quadcopters for a variety of applications. With the improvement of stabilization software, quadcopters have seen a rise in popularity as a stable, cheap, and highly maneuverable aerial platform. 
-
-	Although a relatively new field, several research groups have studied the use of quadcopters in 3D model construction. Irschara et al. created a system to generate 3D models using images taken from UAVs. While a quadcopter was used for gathering imagery, the quadcopter was manually controlled and the main focus of their work was photogrammetry-based model creation \cite{Irschara}. Steffen et al. studied surface reconstruction using aerial photography captured by UAVs \cite{Steffen}.
+	Although a relatively new field, several research groups have studied the use of quadcopters in 3D model construction. Irschara et al. created a system to generate 3D models using images taken from UAVs. While a quadcopter was used for gathering imagery, the quadcopter was manually controlled and the main focus of their work was multi-view stereo model creation \cite{Irschara}. Steffen et al. studied surface reconstruction using aerial photography captured by UAVs \cite{Steffen}.
 
 	 \begin{figure}[ht]
             \centering
             \includegraphics[width=300px]{../images/Irschara.png}
-            \caption{3D Model of Building By Irschara et al.~\cite{Irschara}}\label{fig:Irschara}
+            \caption{3D Model of a building By Irschara et al.~\cite{Irschara}}\label{fig:Irschara}
     \end{figure}
 
 	\begin{figure}[ht]
@@ -27,15 +27,15 @@
                     \includegraphics[width=0.8\textwidth]{../images/Engel1.png}
                     \caption{Camera view with detected features}
             \end{subfigure}
-            \caption{AR.Drone Localization Using Monocular SLAM~\cite{Engel2}.}
+            \caption{AR.Drone localization using monocular SLAM~\cite{Engel2}.}
     \end{figure}
 
 
 \section{GPS-denied Navigation of Quadcopters}
 
-	There has been substantial work done on autonomous navigation of quadcopters without the use of GPS. As GPS signal cannot typically penetrate the walls or ceilings, any autonomous flights taking place indoors must use methods other than GPS for localization. 
+	There has been substantial work done on autonomous navigation of quadcopters without the use of GPS. As GPS signal cannot typically penetrate walls or ceilings, any autonomous flights taking place indoors must use methods other than GPS for localization. 
 
-    Most relevant to this project, Engel et al. have published multiple papers on the camera-based navigation and localization of the AR.Drone~\cite{Engel, Engel2}. While they were able to achieve very accurate navigation, their work relies on the drone facing a mostly planar surface during the entire flight. As constructing models requires capturing imagery from a variety of positions and headings, this constraint is not acceptable.
+    Most relevant to this project, Engel et al. have published multiple papers on the camera-based navigation and localization of the AR.Drone~\cite{Engel, Engel2}. While they were able to achieve very accurate navigation, their work relies on the drone facing a mostly planar surface during the entire flight. As constructing models requires capturing imagery from a variety of positions and headings, this constraint is not acceptable for the proposed system.
 
 	\begin{figure}[ht]
             \centering
@@ -51,8 +51,8 @@
                     \includegraphics[width=0.8\textwidth]{../images/Bills2.png}
                     \caption{Stair detection}
             \end{subfigure}
-            \caption{Localization Using Perspective Cues~\cite{Bills}.}
+            \caption{Localization using perspective cues~\cite{Bills}.}
     \end{figure}
 
-	Bills et al. present a method for navigating in an unknown interior space with the AR.Drone. By performing edge detection on the forward and downward facing cameras, their algorithm is able to determine the type of environment the quadcopter is in, either hallway or staircase, and issues the appropriate commands to autonomously navigate the space~\cite{Bills}. While this system is a great step in exploring interior space, it does not provide a solution to our problem. Unlike the work by Bills et al., our system must operate in essentially open space, with few visual cues, such as vanishing points, available for reference.
+	Bills et al. presented a method for navigating in an unknown interior space with the AR.Drone. By performing edge detection on the forward and downward facing cameras, their algorithm is able to determine the type of environment the quadcopter is in, either hallway or staircase, and issues the appropriate commands to autonomously navigate the space~\cite{Bills}. While this system is a great step in exploring interior space, it does not provide a solution to our problem. Unlike the work by Bills et al., our system must operate in essentially open space, with few visual cues, such as vanishing points, available for reference.
 

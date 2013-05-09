@@ -347,15 +347,31 @@
 			"file": "FinalReport/thesis.tex",
 			"settings":
 			{
-				"buffer_size": 9859,
+				"buffer_size": 9963,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "FinalReport/puthesis.cls",
+			"settings":
+			{
+				"buffer_size": 6365,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "FinalReport/acknowledgements.tex",
+			"settings":
+			{
+				"buffer_size": 2090,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "FinalReport/ch-intro/chapter-intro.tex",
 			"settings":
 			{
-				"buffer_size": 6601,
+				"buffer_size": 8247,
 				"line_ending": "Windows"
 			}
 		},
@@ -363,7 +379,7 @@
 			"file": "FinalReport/ch-pastwork/chapter-pastwork.tex",
 			"settings":
 			{
-				"buffer_size": 1258,
+				"buffer_size": 3987,
 				"line_ending": "Windows"
 			}
 		},
@@ -371,7 +387,7 @@
 			"file": "FinalReport/ch-system/chapter-system.tex",
 			"settings":
 			{
-				"buffer_size": 9237,
+				"buffer_size": 14882,
 				"line_ending": "Unix"
 			}
 		},
@@ -379,7 +395,7 @@
 			"file": "FinalReport/ch-localization/chapter-localization.tex",
 			"settings":
 			{
-				"buffer_size": 4894,
+				"buffer_size": 20412,
 				"line_ending": "Unix"
 			}
 		},
@@ -387,7 +403,7 @@
 			"file": "FinalReport/ch-results/chapter-results.tex",
 			"settings":
 			{
-				"buffer_size": 174,
+				"buffer_size": 10712,
 				"line_ending": "Unix"
 			}
 		},
@@ -395,7 +411,7 @@
 			"file": "FinalReport/ch-conclusion/chapter-conclusion.tex",
 			"settings":
 			{
-				"buffer_size": 43,
+				"buffer_size": 1300,
 				"line_ending": "Windows"
 			}
 		},
@@ -403,15 +419,23 @@
 			"file": "FinalReport/thesis.bib",
 			"settings":
 			{
-				"buffer_size": 5720,
+				"buffer_size": 8681,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "FinalReport/abstract.tex",
+			"settings":
+			{
+				"buffer_size": 605,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 47.0,
 		"selected_items":
 		[
 			[
@@ -632,10 +656,17 @@
 	},
 	"file_history":
 	[
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/thesis.bib",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/example_abstracts.txt",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/ch-system/chapter-system.log",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/puthesis.cls",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/todo.txt",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/honorcode.tex",
+		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/ch-pastwork/chapter-pastwork.tex",
+		"/Users/ekelley/Google Drive/Projects/Thesis/Bibliography/sources.bib",
 		"/Users/ekelley/Google Drive/Projects/HCI.sublime-project",
 		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/ch-system/chapter-system.tex",
 		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/ch-appendicies/implementation.tex",
-		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/puthesis.cls",
 		"/Users/ekelley/Google Drive/Projects/Thesis/FebPaper/FinalProject.tex",
 		"/Users/ekelley/Google Drive/Projects/Thesis/Thesis.sublime-project",
 		"/Users/ekelley/Google Drive/Projects/Thesis/FinalReport/thesis.pdf",
@@ -764,6 +795,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Kalman",
+			"RE",
+			"Kalman",
+			"fused",
+			"press",
+			"ARDrone",
+			"AR",
+			"wiki",
+			"subfig",
+			"Berard",
+			"figure",
+			"cite",
+			"extravspace",
+			"dedication",
+			"dedi",
+			"dedication",
+			"].",
+			"Photoscan",
+			"ref",
+			"[h",
+			"[h]",
+			"[ht",
+			"ht",
+			"pose",
+			"convo",
 			"quadrotor",
 			"ams",
 			"dedic",
@@ -866,26 +922,7 @@
 			"breadcrumb",
 			"halflings",
 			"user has no",
-			"h1",
-			"large",
-			"min-width",
-			"nav",
-			"edit",
-			"croppable",
-			"logout",
-			"status",
-			"grid",
-			"comment-",
-			"confirmation_email",
-			"profile",
-			"register_start",
-			"	\n",
-			"right",
-			"croppable",
-			"croppabel",
-			"hr",
-			"status-comment",
-			"status-text"
+			"h1"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -907,7 +944,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -915,15 +952,15 @@
 					"file": "FinalReport/thesis.tex",
 					"settings":
 					{
-						"buffer_size": 9859,
+						"buffer_size": 9963,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								896,
-								896
+								8728,
+								8728
 							]
 						],
 						"settings":
@@ -933,51 +970,53 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2124.0,
+						"translation.y": 3220.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "FinalReport/ch-intro/chapter-intro.tex",
+					"file": "FinalReport/puthesis.cls",
 					"settings":
 					{
-						"buffer_size": 6601,
+						"buffer_size": 6365,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2525,
-								2525
+								2774,
+								2774
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/LaTeX/TeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 133.0,
+						"translation.y": 823.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "FinalReport/ch-pastwork/chapter-pastwork.tex",
+					"file": "FinalReport/acknowledgements.tex",
 					"settings":
 					{
-						"buffer_size": 1258,
+						"buffer_size": 2090,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1246,
-								1246
+								1341,
+								1341
 							]
 						],
 						"settings":
@@ -992,18 +1031,44 @@
 				},
 				{
 					"buffer": 3,
-					"file": "FinalReport/ch-system/chapter-system.tex",
+					"file": "FinalReport/ch-intro/chapter-intro.tex",
 					"settings":
 					{
-						"buffer_size": 9237,
+						"buffer_size": 8247,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								311,
-								311
+								7177,
+								7177
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 89.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "FinalReport/ch-pastwork/chapter-pastwork.tex",
+					"settings":
+					{
+						"buffer_size": 3987,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								345,
+								345
 							]
 						],
 						"settings":
@@ -1019,19 +1084,47 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "FinalReport/ch-localization/chapter-localization.tex",
+					"buffer": 5,
+					"file": "FinalReport/ch-system/chapter-system.tex",
 					"settings":
 					{
-						"buffer_size": 4894,
+						"buffer_size": 14882,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1185,
-								1185
+								80,
+								80
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "FinalReport/ch-localization/chapter-localization.tex",
+					"settings":
+					{
+						"buffer_size": 20412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								128,
+								128
 							]
 						],
 						"settings":
@@ -1046,24 +1139,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "FinalReport/ch-results/chapter-results.tex",
 					"settings":
 					{
-						"buffer_size": 174,
+						"buffer_size": 10712,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29,
-								29
+								10515,
+								10515
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1072,19 +1166,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "FinalReport/ch-conclusion/chapter-conclusion.tex",
 					"settings":
 					{
-						"buffer_size": 43,
+						"buffer_size": 1300,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								522,
+								522
 							]
 						],
 						"settings":
@@ -1098,19 +1192,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "FinalReport/thesis.bib",
 					"settings":
 					{
-						"buffer_size": 5720,
+						"buffer_size": 8681,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5588,
-								5588
+								8455,
+								8461
 							]
 						],
 						"settings":
@@ -1118,6 +1212,32 @@
 							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "FinalReport/abstract.tex",
+					"settings":
+					{
+						"buffer_size": 605,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								71,
+								71
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1178,12 +1298,64 @@
 		"selected_items":
 		[
 			[
-				"system",
-				"FinalReport/ch-system/chapter-system.tex"
+				"thesis",
+				"FinalReport/thesis.bib"
 			],
 			[
 				"cls",
 				"FinalReport/puthesis.cls"
+			],
+			[
+				"abstr",
+				"FinalReport/abstract.tex"
+			],
+			[
+				"abst",
+				"FinalReport/abstract.tex"
+			],
+			[
+				"pas",
+				"FinalReport/ch-pastwork/chapter-pastwork.tex"
+			],
+			[
+				"honor",
+				"FinalReport/honorcode.tex"
+			],
+			[
+				"ac",
+				"FinalReport/acknowledgements.tex"
+			],
+			[
+				"ack",
+				"FinalReport/acknowledgements.tex"
+			],
+			[
+				"resu",
+				"FinalReport/ch-results/chapter-results.tex"
+			],
+			[
+				"source",
+				"Bibliography/sources.bib"
+			],
+			[
+				"th",
+				"FinalReport/thesis.bib"
+			],
+			[
+				"sour",
+				"Bibliography/sources.bib"
+			],
+			[
+				"bib",
+				"FinalReport/thesis.bib"
+			],
+			[
+				"notes",
+				"FinalReport/notes.txt"
+			],
+			[
+				"system",
+				"FinalReport/ch-system/chapter-system.tex"
 			],
 			[
 				"imple",
@@ -1204,10 +1376,6 @@
 			[
 				"asse",
 				"Project/Assembly.pde"
-			],
-			[
-				"bib",
-				"Bibliography/sources.bib"
 			],
 			[
 				"past",
